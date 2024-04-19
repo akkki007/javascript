@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+    .product{
+        border: 2px rgb(0, 204, 255) solid;
+        height: 400px ;
+        width: 200px;
+        margin-left: 300px;
+    }
+    
+    .img{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .product h2{
+        margin-left: 10px;
+        margin-top: 7px;    
+        font-family: "Poppins", sans-serif;
+        font-size: 20px
+    }
+    .product p{
+        font-family:  "Poppins", sans-serif;
+        font-size: 14px;
+        margin-left: 8px;
+    }
+    .additems{
+        display: flex;  
+        margin-left: 370px;
+    }
+    .plus{
+        padding: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -70px;
+        margin-top: 10px;
+    }
+    #changing{
+        font-family:  "Poppins", sans-serif;
+        margin-left: 50px;
+    }
+    .minus{
+        padding: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 47px;
+        margin-top: 10px;
+    }
+    #price{
+        font-family:  "Poppins", sans-serif;
+        margin-top: -39px;
+        margin-left: -195px;
+    }
+    #bill{
+        margin-left: 363px;
+        margin-top: 20px;
+        padding: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgba(0, 255, 255, 0.448);
+        border: 1px black solid;
+        border-radius: 10px;
+}
+</style>
+<body>
+    <div class="product">
+        <img class="img" src="product.jpeg" alt="Air jordan 1" height="220px" width="180px">
+        <h2>Air Jordan 1</h2>
+        <p>Lorem ipsum dolor sit <br>amet Lorem ipsum dolor <br>sit amet consectetur.</p>
+    </div>
+    <div class="additems">
+        <button class="plus" onclick="addtocart()">+</button>
+        <h3 id="changing">0</h3>
+        <button class="minus" onclick="deletefromcart()">-</button>
+        <p><h3 id="price">$590</h3></p>
+    </div>
+    <button id="bill" onclick="billgenerator()">Buy now</button>  
+    <p>Total bill is <h3 id="total">c</h3></p>
+   
+   
+<script>
+    var i = 0;
+        var totalBill = 0;
+
+        function addtocart() {
+            i++;
+            document.getElementById('changing').innerText = i;
+            updateTotalPrice();
+        }
+
+        function deletefromcart() {
+            if (i > 0) {
+                i--;
+                document.getElementById('changing').innerText = i;
+                updateTotalPrice();
+            } else {
+                alert("Bro, look at the quantity");
+            }
+        }
+
+        function updateTotalPrice() {
+            var priceString = document.getElementById('price').innerText;
+            var price = parseFloat(priceString.replace('$', ''));
+            totalBill = i * price;
+            document.getElementById('total').innerText = "$" + totalBill.toFixed(2);
+        }
+
+        function billgenerator() {
+            alert("Total bill is: $" + totalBill.toFixed(2));
+        }
+// JavaScript
+   
+</script>
+</body>
+</html>

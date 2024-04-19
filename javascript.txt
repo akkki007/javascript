@@ -1,0 +1,19 @@
+javascript
+string objects functions
+=>concat
+=>includes()
+=>length
+=>charAt()
+=>startsWith()
+=>endsWith
+=>indexOf() -> here if we write a string it will return the starting index of the string 
+->it returns -1 if no match is found
+=>slice(start_ind,end_ind)->it return the substring 
+
+prompt
+alert
+let,var,const
+datatypes
+loops
+conditional statements
+structure in js
